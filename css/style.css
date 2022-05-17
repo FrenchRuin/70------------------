@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* 헤더 */
+.text-center {
+	height: 100px;
+	color: #000;
+	text-align: center;
+	line-height: 100px;
+}
+
+/* 슬라이드 */
+.slides {
+	overflow: hidden;
+	position: relative;
+	height: 500px;
+	width: 100%;
+	margin: 0 auto;
+}
+.slides > .slides-container {
+	position: absolute;
+	left: -900%;
+	width: calc(100% * 27);
+	display: flex;
+	flex-flow: row nowrap;
+}
+.slides > .slides-container > p {
+	display: block;
+	width: calc(100% / 27);
+	height: 500px;
+	background-position: center center;
+	background-size: cover;
+}
+.slides > .slides-container > p.slide-1 {
+	background-image: url(./../images/pic1.png);
+}
+.slides > .slides-container > p.slide-2 {
+	background-image: url(./../images/pic2.png);
+}
+.slides > .slides-container > p.slide-3 {
+	background-image: url(./../images/pic3.png);
+}
+.slides > .slides-container > p.slide-4 {
+	background-image: url(./../images/pic4.png);
+}
+.slides > .slides-container > p.slide-5 {
+	background-image: url(./../images/pic5.png);
+}
+.slides > .slides-container > p.slide-6 {
+	background-image: url(./../images/pic6.jpg);
+}
+.slides > .slides-container > p.slide-7 {
+	background-image: url(./../images/pic7.png);
+}
+.slides > .slides-container > p.slide-8 {
+	background-image: url(./../images/pic8.png);
+}
+.slides > .slides-container > p.slide-9 {
+	background-image: url(./../images/pic9.jpg);
+}
+
+.slides > .slides-container > p > a {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	height: 100%;
+	text-indent: -99999px;
+}
+
+.slides > a {
+	position: absolute;
+	display: block;
+	width: 38px;
+	height: 64px;
+	text-indent: -99999px;
+}
+.slides > a.next {
+	right: 130px;
+	top: calc(50% - 32px);
+	background-image: url(./../images/next.png);
+}
+
+.slides > a.prev {
+	left: 130px;
+	top: calc(50% - 32px);
+	background-image: url(./../images/prev.png);
+}
+
+.slides > .status {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 40px;
+	left: calc(50% - 75px);
+	width: 150px;
+	height: 10px;
+	color: black;
+	font-weight: 600;
+}
+
+.slides > .status > .bar {
+	height: 6px;
+
+	width: 80px;
+	margin-top: 4px;
+	text-indent: -99999px;
+	background-color: rgba(128, 128, 128, 0.412);
+}
+
+@keyframes gage {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 80px;
+	}
+}
+.slides > .status > .gage.pause {
+	animation: gage 3s infinite;
+}
+
+.slides > .status > .gage {
+	position: absolute;
+	left: 25px;
+	top: 4px;
+	width: 4px;
+	height: 4px;
+
+	background-color: black;
+	border: 1px solid #000;
+}
+
+.slides > .status > .autoplay {
+	display: block;
+	width: 10px;
+	height: 10px;
+	text-indent: -99999px;
+	margin-top: 3px;
+
+	background-image: url(./../images/play1.png);
+	background-position: center center;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.slides > .status > .autoplay.pause {
+	background-image: url(./../images/pause1.png);
+}
